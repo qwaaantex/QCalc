@@ -3,6 +3,7 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:qcalc/Screens/Widgets/CalculatorButtons.dart';
 import 'package:qcalc/Screens/Widgets/CalculatorField.dart';
 import 'package:qcalc/Screens/Widgets/Dots.dart';
+import 'package:qcalc/Screens/Widgets/MathEqulations.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,6 +19,26 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (context, animation1, animation2) {
+                  return FadeTransition(
+                    opacity: animation1,
+                    child: MathEqulation(),
+                  );
+                },
+              ),
+            );
+          },
+          icon: Icon(
+            HugeIcons.strokeRoundedMath,
+            color: Theme.of(context).iconTheme.color,
+            size: 30,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {
