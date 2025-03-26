@@ -60,7 +60,10 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                             },
                             child: Text(
                               firstLine[index],
-                              style: Theme.of(context).textTheme.bodyMedium,
+                              style: TextStyle(
+                                color: Colors.indigo,
+                                fontSize: 28,
+                              ),
                             ),
                           ),
                         ),
@@ -101,7 +104,13 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                             },
                             child: Text(
                               twoLine[index],
-                              style: Theme.of(context).textTheme.bodyMedium,
+                              style:
+                                  index != 3
+                                      ? Theme.of(context).textTheme.bodyMedium
+                                      : TextStyle(
+                                        color: Colors.indigo,
+                                        fontSize: 28,
+                                      ),
                             ),
                           ),
                         ),
@@ -138,7 +147,13 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                             },
                             child: Text(
                               thirdLine[index],
-                              style: Theme.of(context).textTheme.bodyMedium,
+                              style:
+                                  index != 3
+                                      ? Theme.of(context).textTheme.bodyMedium
+                                      : TextStyle(
+                                        color: Colors.indigo,
+                                        fontSize: 28,
+                                      ),
                             ),
                           ),
                         ),
@@ -174,7 +189,13 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                         },
                         child: Text(
                           fourthLine[index],
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style:
+                              index != 3
+                                  ? Theme.of(context).textTheme.bodyMedium
+                                  : TextStyle(
+                                    color: Colors.indigo,
+                                    fontSize: 28,
+                                  ),
                         ),
                       ),
                     ),

@@ -24,7 +24,9 @@ class CalculatorBloc extends Bloc<CalculatorEvent, String> {
       if (state.contains(RegExp(r'[0-9]'))) {
         try {
           final result = TinyExpr(state).evaluate();
-          emit(result % 2 == 0 ? result.round().toString() : result.toString());
+          emit(
+            (result % 1) != 0 ? result.toString() : result.round().toString(),
+          );
         } catch (e) {
           emit("Ошибка");
         }
@@ -46,9 +48,11 @@ class CalculatorLogics extends Bloc<CalculatorEvent, bool> {
 }
 
 class CalculatorLogicsNotificationsBLoc extends Bloc<CalculatorEvent, bool> {
-  CalculatorLogicsNotificationsBLoc() : super(false) {
-    on<CalculatorLogicsNotifications>((event, emit) {
+  CalculatorLogicsNotificationsBLoc(bool value) : super(value) {
+    on<CalculatorLogicsNotifications>((event, emit) async {
+      final SharedPreferences storage = await SharedPreferences.getInstance();
       emit(event.value);
+      storage.setBool("_notifications", state);
     });
   }
 }

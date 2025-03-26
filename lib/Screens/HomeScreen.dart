@@ -3,7 +3,7 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:qcalc/Screens/Widgets/CalculatorButtons.dart';
 import 'package:qcalc/Screens/Widgets/CalculatorField.dart';
 import 'package:qcalc/Screens/Widgets/Dots.dart';
-import 'package:qcalc/Screens/Widgets/MathEqulations.dart';
+import 'package:qcalc/Screens/MathEqulations.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

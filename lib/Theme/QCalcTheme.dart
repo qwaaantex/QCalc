@@ -19,6 +19,14 @@ ThemeData qCalcThemeDark() {
     textTheme: TextTheme(
       bodyMedium: TextStyle(color: Colors.black, fontSize: 28),
       bodySmall: TextStyle(color: Colors.white, fontSize: 18),
+      bodyLarge: TextStyle(
+        color: Colors.white,
+        fontSize: 26,
+        fontWeight: FontWeight.bold,
+      ),
+      labelSmall: TextStyle(color: Colors.grey, fontSize: 16),
+      labelMedium: TextStyle(color: Colors.black, fontSize: 20),
+      labelLarge: TextStyle(color: Colors.black, fontSize: 18),
     ),
   );
 }
@@ -41,6 +49,14 @@ ThemeData qCalcThemeLight() {
     textTheme: TextTheme(
       bodyMedium: TextStyle(color: Colors.white, fontSize: 28),
       bodySmall: TextStyle(color: Colors.black, fontSize: 18),
+      bodyLarge: TextStyle(
+        color: Colors.black,
+        fontSize: 26,
+        fontWeight: FontWeight.bold,
+      ),
+      labelSmall: TextStyle(color: Colors.grey, fontSize: 16),
+      labelMedium: TextStyle(color: Colors.white, fontSize: 20),
+      labelLarge: TextStyle(color: Colors.black, fontSize: 18),
     ),
   );
 }
