@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import 'package:qcalc/BLoc/bloc/calculator_bloc.dart';
@@ -52,6 +53,34 @@ class Dots extends StatelessWidget {
                         style: Theme.of(context).textTheme.labelLarge,
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: AnimatedSwitcher(
+                          duration: Duration(milliseconds: 500),
+                          transitionBuilder: (child, animation) {
+                            return SlideTransition(
+                              position: animation.drive(
+                                Tween(
+                                  begin: Offset(1.0, 0.0),
+                                  end: Offset.zero,
+                                ),
+                              ),
+                              child: child,
+                            );
+                          },
+                          child: Icon(
+                            key: ValueKey<bool>(state),
+                            state == true
+                                ? HugeIcons.strokeRoundedMoon
+                                : Icons.wb_sunny_outlined,
+                            size: 24,
+                            color: Theme.of(context).indicatorColor,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -87,7 +116,6 @@ class Dots extends StatelessWidget {
                 break;
 
               case false:
-                Navigator.pop(context);
                 showTopSnackBar(
                   Overlay.of(context),
                   CustomSnackBar.error(
@@ -97,6 +125,7 @@ class Dots extends StatelessWidget {
                         TextStyle(color: Colors.red, fontSize: 20),
                   ),
                 );
+                break;
             }
           },
 
@@ -130,6 +159,34 @@ class Dots extends StatelessWidget {
                       child: Text(
                         "Уведомления",
                         style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: AnimatedSwitcher(
+                          duration: Duration(milliseconds: 500),
+                          transitionBuilder: (child, animation) {
+                            return SlideTransition(
+                              position: animation.drive(
+                                Tween(
+                                  begin: Offset(1.0, 0.0),
+                                  end: Offset.zero,
+                                ),
+                              ),
+                              child: child,
+                            );
+                          },
+                          child: Icon(
+                            state == true
+                                ? HugeIcons.strokeRoundedNotificationBlock01
+                                : HugeIcons.strokeRoundedNotification01,
+                            color: Theme.of(context).indicatorColor,
+                            size: 24,
+                            key: ValueKey<bool>(state),
+                          ),
+                        ),
                       ),
                     ),
                   ],

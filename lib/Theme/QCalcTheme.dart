@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 ThemeData qCalcThemeDark() {
   return ThemeData(
     iconTheme: IconThemeData(color: Colors.white),
-    cardColor: Colors.deepOrange.shade200,
+    cardColor: Colors.deepOrange.shade400,
     focusColor: Colors.deepOrange.shade400,
     scaffoldBackgroundColor: Colors.black,
+    indicatorColor: Colors.black,
     highlightColor: Colors.white,
 
     dialogBackgroundColor: Colors.indigo,
@@ -15,7 +16,7 @@ ThemeData qCalcThemeDark() {
         overlayColor: Colors.transparent,
       ),
     ),
-    canvasColor: Colors.deepOrange.shade400,
+    canvasColor: Colors.transparent,
     textTheme: TextTheme(
       bodyMedium: TextStyle(color: Colors.black, fontSize: 28),
       bodySmall: TextStyle(color: Colors.white, fontSize: 18),
@@ -34,10 +35,11 @@ ThemeData qCalcThemeDark() {
 ThemeData qCalcThemeLight() {
   return ThemeData(
     iconTheme: IconThemeData(color: Colors.black),
-    cardColor: Colors.deepOrange.shade200,
+    cardColor: Colors.deepOrange.shade400,
     scaffoldBackgroundColor: Colors.white,
     focusColor: Colors.deepOrange.shade400,
     highlightColor: Colors.white,
+    indicatorColor: Colors.black,
     dialogBackgroundColor: Colors.indigo,
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
@@ -45,7 +47,7 @@ ThemeData qCalcThemeLight() {
         overlayColor: Colors.transparent,
       ),
     ),
-    canvasColor: Colors.deepOrange.shade400,
+    canvasColor: Colors.transparent,
     textTheme: TextTheme(
       bodyMedium: TextStyle(color: Colors.white, fontSize: 28),
       bodySmall: TextStyle(color: Colors.black, fontSize: 18),

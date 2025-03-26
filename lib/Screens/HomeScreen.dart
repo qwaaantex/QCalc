@@ -25,8 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
               context,
               PageRouteBuilder(
                 pageBuilder: (context, animation1, animation2) {
-                  return FadeTransition(
-                    opacity: animation1,
+                  return SlideTransition(
+                    position: animation1.drive(
+                      Tween(begin: Offset(1.0, 0.0), end: Offset.zero),
+                    ),
                     child: MathEqulation(),
                   );
                 },
@@ -54,8 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         SizedBox(height: 12),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.11,
-                          height: MediaQuery.of(context).size.height * 0.01,
+                          width: MediaQuery.of(context).size.width * 0.1,
+                          height: MediaQuery.of(context).size.height * 0.005,
 
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(48),
@@ -79,10 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [CalculatorField(), CalculatorButtons()],
-      ),
+      body: CalculatorButtons(),
     );
   }
 }
