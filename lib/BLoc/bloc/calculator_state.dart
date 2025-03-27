@@ -23,3 +23,5 @@ class CalculatorLogicsNotifications extends CalculatorEvent {
 class CalculatorThemes extends CalculatorEvent {}
 
 class BlocInitializedState extends CalculatorEvent {}
+
+class CalculatorDelete extends CalculatorEvent {}

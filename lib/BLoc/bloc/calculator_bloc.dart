@@ -17,6 +17,13 @@ class CalculatorBloc extends Bloc<CalculatorEvent, String> {
         emit(state + event.work);
       }
     });
+    on<CalculatorDelete>((event, emit) {
+      if (state.length != 1) {
+      emit(state.substring(0, state.length - 1).toString());
+      } else {
+        emit("0");
+      }
+    });
     on<CalculatorClearAll>((event, emit) {
       emit('0');
     });

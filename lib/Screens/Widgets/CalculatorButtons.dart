@@ -49,8 +49,9 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                   padding: EdgeInsets.all(8),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(48),
+                      color: index == firstLine.length - 1 ?Theme.of(context).disabledColor : Theme.of(context).primaryColorLight
+                      
                     ),
                     width: MediaQuery.of(context).size.width * 0.2,
                     height: MediaQuery.of(context).size.height * 0.11,
@@ -87,28 +88,31 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                   padding: EdgeInsets.all(8),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(48),
+                      color: index == twoLine.length - 1 ? Theme.of(context).disabledColor : Theme.of(context).cardColor
                     ),
                     width: MediaQuery.of(context).size.width * 0.2,
                     height: MediaQuery.of(context).size.height * 0.11,
                     child: Center(
                       child: TextButton(
                         onPressed: () {
-                          if (index == twoLine.length - 1) {
+                          if (index == 0) {
+                              bloc.add(CalculatorDelete());
+                            } 
+                          else if (index == twoLine.length - 1) {
                             bloc.add(CalculatorClearAll());
                           } else {
                             bloc.add(CalculatorMathsOne(twoLine[index]));
                           }
                         },
-                        child:
+                        child: index == twoLine.length - 4 ? Icon(Icons.cancel_outlined, color: Theme.of(context).textTheme.bodyMedium?.color, size: 30,) :
                             index != twoLine.length - 1
                                 ? Text(
                                   twoLine[index],
                                   style: Theme.of(context).textTheme.bodyMedium,
                                 )
                                 : Icon(
-                                  HugeIcons.strokeRoundedDelete01,
+                                  HugeIcons.strokeRoundedDelete03,
                                   color:
                                       Theme.of(
                                         context,
@@ -135,8 +139,8 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                   padding: EdgeInsets.all(8),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(48),
+                      color: index == thirdLine.length - 1 ? Theme.of(context).disabledColor : Theme.of(context).cardColor
                     ),
                     width: MediaQuery.of(context).size.width * 0.2,
                     height: MediaQuery.of(context).size.height * 0.11,
@@ -170,8 +174,8 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                   padding: EdgeInsets.all(8),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(48),
+                      color: index == fourthLine.length - 1 ? Theme.of(context).disabledColor : Theme.of(context).cardColor
                     ),
                     width: MediaQuery.of(context).size.width * 0.2,
                     height: MediaQuery.of(context).size.height * 0.11,
@@ -204,8 +208,8 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                   padding: EdgeInsets.all(8),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(48),
+                      color: index == fifthLine.length - 1 ? Theme.of(context).disabledColor : Theme.of(context).cardColor
                     ),
                     width: MediaQuery.of(context).size.width * 0.2,
                     height: MediaQuery.of(context).size.height * 0.11,
@@ -238,10 +242,10 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                   padding: EdgeInsets.all(8),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(48),
                       color:
                           index == sixthLine.length - 1
-                              ? Colors.indigo
+                              ? Theme.of(context).disabledColor
                               : Theme.of(context).cardColor,
                     ),
                     width: MediaQuery.of(context).size.width * 0.2,

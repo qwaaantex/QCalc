@@ -30,17 +30,7 @@ class _CalculatorFieldState extends State<CalculatorField> {
                       reverse: true,
                       padding: EdgeInsets.all(8),
                       scrollDirection: Axis.horizontal,
-                      child: AnimatedSwitcher(
-                        duration: Duration(milliseconds: 25),
-                        transitionBuilder: (child, animation) {
-                          return SlideTransition(
-                            position: animation.drive(
-                              Tween(begin: Offset(1.0, 0.0), end: Offset.zero),
-                            ),
-                            child: child,
-                          );
-                        },
-                        child: Text(
+                      child: Text(
                           key: ValueKey<dynamic>(state),
                           state.toString(),
                           style: TextStyle(
@@ -50,9 +40,8 @@ class _CalculatorFieldState extends State<CalculatorField> {
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
+                ])
+              
             );
           },
         ),

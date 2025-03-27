@@ -8,10 +8,12 @@ ThemeData qCalcThemeDark() {
     scaffoldBackgroundColor: Colors.black,
     indicatorColor: Colors.black,
     primaryColor: Colors.green,
+    primaryColorLight: Colors.deepOrange.shade300,
+
     dividerColor: Colors.white,
     shadowColor: Colors.grey,
     highlightColor: Colors.white,
-
+    disabledColor: Colors.red,
     dialogBackgroundColor: Colors.indigo,
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
@@ -45,6 +47,8 @@ ThemeData qCalcThemeLight() {
     highlightColor: Colors.white,
     indicatorColor: Colors.black,
     primaryColor: Colors.green,
+    disabledColor: Colors.red,
+    primaryColorLight: Colors.deepOrange.shade300,
     dividerColor: Colors.white,
     shadowColor: Colors.grey,
     dialogBackgroundColor: Colors.indigo,
