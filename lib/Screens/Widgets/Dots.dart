@@ -26,7 +26,7 @@ class Dots extends StatelessWidget {
               padding: EdgeInsets.all(8),
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.05,
+                height: MediaQuery.of(context).size.height * 0.055,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   color: Theme.of(context).cardColor,
@@ -152,7 +152,7 @@ class Dots extends StatelessWidget {
               padding: EdgeInsets.all(8),
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.05,
+                height: MediaQuery.of(context).size.height * 0.055,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   color: Theme.of(context).cardColor,
