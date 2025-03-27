@@ -1,7 +1,7 @@
 # 📝 QCalc - The Ultimate Calculator
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&logo=github" alt="Version">
+  <img src="https://img.shields.io/badge/version-1.0.3-blue?style=for-the-badge&logo=github" alt="Version">
   <img src="https://img.shields.io/badge/platform-CROSSPLATFORM-darkgray?style=for-the-badge&logo=flutter" alt="Platform">
 </p>
 
@@ -22,23 +22,25 @@
 
 ### 🌟 Key Features:
 - 🌙 Beautiful Dark Theme
+- ☀️ Good Light Theme
 - ➕ Basic & Advanced Math Functions
+- ♾️ Professional Logarifm and sinus
 - 🔢 Scientific Calculator Mode
 - 📊 Calculation History
 - 🎨 Customizable Themes
 
 ## 🖼️ Visual Showcase
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/calculator1.jpg" alt="QCalc Basic Mode" width="280">
-  <img src="https://github.com/user-attachments/assets/calculator2.jpg" alt="QCalc Scientific Mode" width="245">
-  <img src="https://github.com/user-attachments/assets/calculator3.jpg" alt="QCalc History View" width="245">
+  <img src="https://github.com/user-attachments/assets/72f824bd-bfb7-48df-90d5-7c23932eeaf8" alt="QCalc Basic Mode" width="245">
+  <img src="https://github.com/user-attachments/assets/e60f79bd-a873-4ba6-9d50-de9a08032afb"alt="QCalc Scientific Mode" width="245">
+  <img src="https://github.com/user-attachments/assets/be839dbe-90c1-44b2-bf1e-8e0b84929db0" alt="QCalc Scientific Mode" width="245">
 
-<details>
 <summary>🔬 Technological Insights</summary>
 
 ## 🛠 Core Technologies
 - 📱 Flutter Framework
 - 🧮 Dart Math Library
+- ⭐️ Perfect Actuallity
 - 📊 Custom UI Components
 - 🔄 State Management with Provider
 </details>
@@ -55,6 +57,7 @@
 
 - [ ] 📈 Graphing Calculator Functions
 - [ ] 💰 Currency Converter
+- [ ] 💼 Completer Tasks
 - [ ] 📐 Unit Converter
 - [ ] 🔐 App Lock Feature
 
@@ -77,5 +80,5 @@ Want to improve QCalc? Found a calculation bug?
 > **Accuracy Guarantee**: QCalc delivers precise calculations with every operation. Your numbers are processed locally - we never send your data anywhere. 🔢✨
 
 <p align="center">
-  Engineered with precision for those who demand both power and elegance
+  Engineered with precision for those who demand both power and elegance. But also important notice for architecture and code! 🤭
 </p>
