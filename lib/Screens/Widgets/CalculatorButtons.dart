@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:qcalc/BLoc/bloc/calculator_bloc.dart';
 import 'package:qcalc/Screens/Widgets/CalculatorField.dart';
 
@@ -11,12 +12,12 @@ class CalculatorButtons extends StatefulWidget {
 }
 
 class _CalculatorButtonsState extends State<CalculatorButtons> {
-  final List firstLine = ["-", "(", ")", "%"];
+  final List firstLine = ["log", "(", ")", "%"];
   final List twoLine = ["^", "/", "*", "AC"];
   final List thirdLine = ["7", "8", "9", "-"];
   final List fourthLine = ["4", "5", "6", "+"];
   final List fifthLine = ["1", "2", "3", "!"];
-  final List sixthLine = ["%", "0", ",", "="];
+  final List sixthLine = ["sin", "0", ",", "="];
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,11 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                     child: Center(
                       child: TextButton(
                         onPressed: () {
-                          bloc.add(CalculatorMathsOne(firstLine[index]));
+                          if (index == 0) {
+                            bloc.add(CalculatorMathsOne("log("));
+                          } else {
+                            bloc.add(CalculatorMathsOne(firstLine[index]));
+                          }
                         },
                         child: Text(
                           firstLine[index],
@@ -96,10 +101,20 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                             bloc.add(CalculatorMathsOne(twoLine[index]));
                           }
                         },
-                        child: Text(
-                          twoLine[index],
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
+                        child:
+                            index != twoLine.length - 1
+                                ? Text(
+                                  twoLine[index],
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                )
+                                : Icon(
+                                  HugeIcons.strokeRoundedDelete01,
+                                  color:
+                                      Theme.of(
+                                        context,
+                                      ).textTheme.bodyMedium?.color,
+                                  size: 32,
+                                ),
                       ),
                     ),
                   ),
@@ -235,7 +250,11 @@ class _CalculatorButtonsState extends State<CalculatorButtons> {
                       child: TextButton(
                         onPressed: () {
                           if (index != sixthLine.length - 1) {
-                            bloc.add(CalculatorMathsOne(sixthLine[index]));
+                            if (index == 0) {
+                              bloc.add(CalculatorMathsOne("sin("));
+                            } else {
+                              bloc.add(CalculatorMathsOne(sixthLine[index]));
+                            }
                           } else {
                             bloc.add(CalculatorResults());
                           }

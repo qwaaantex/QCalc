@@ -25,7 +25,9 @@ class CalculatorBloc extends Bloc<CalculatorEvent, String> {
         try {
           final result = TinyExpr(state).evaluate();
           emit(
-            (result % 1) != 0 ? result.toString() : result.round().toString(),
+            (result % 1) != 0
+                ? result.toStringAsFixed(4).toString()
+                : result.round().toString(),
           );
         } catch (e) {
           emit("Ошибка");

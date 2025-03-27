@@ -7,6 +7,9 @@ ThemeData qCalcThemeDark() {
     focusColor: Colors.deepOrange.shade400,
     scaffoldBackgroundColor: Colors.black,
     indicatorColor: Colors.black,
+    primaryColor: Colors.green,
+    dividerColor: Colors.white,
+    shadowColor: Colors.grey,
     highlightColor: Colors.white,
 
     dialogBackgroundColor: Colors.indigo,
@@ -18,6 +21,7 @@ ThemeData qCalcThemeDark() {
     ),
     canvasColor: Colors.transparent,
     textTheme: TextTheme(
+      headlineLarge: TextStyle(color: Colors.black, fontSize: 17),
       bodyMedium: TextStyle(color: Colors.black, fontSize: 28),
       bodySmall: TextStyle(color: Colors.white, fontSize: 18),
       bodyLarge: TextStyle(
@@ -26,8 +30,8 @@ ThemeData qCalcThemeDark() {
         fontWeight: FontWeight.bold,
       ),
       labelSmall: TextStyle(color: Colors.grey, fontSize: 16),
-      labelMedium: TextStyle(color: Colors.black, fontSize: 20),
-      labelLarge: TextStyle(color: Colors.black, fontSize: 18),
+      labelMedium: TextStyle(color: Colors.black, fontSize: 18),
+      labelLarge: TextStyle(color: Colors.black, fontSize: 16),
     ),
   );
 }
@@ -40,6 +44,9 @@ ThemeData qCalcThemeLight() {
     focusColor: Colors.deepOrange.shade400,
     highlightColor: Colors.white,
     indicatorColor: Colors.black,
+    primaryColor: Colors.green,
+    dividerColor: Colors.white,
+    shadowColor: Colors.grey,
     dialogBackgroundColor: Colors.indigo,
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
@@ -49,6 +56,7 @@ ThemeData qCalcThemeLight() {
     ),
     canvasColor: Colors.transparent,
     textTheme: TextTheme(
+      headlineLarge: TextStyle(color: Colors.white, fontSize: 17),
       bodyMedium: TextStyle(color: Colors.white, fontSize: 28),
       bodySmall: TextStyle(color: Colors.black, fontSize: 18),
       bodyLarge: TextStyle(
@@ -57,8 +65,8 @@ ThemeData qCalcThemeLight() {
         fontWeight: FontWeight.bold,
       ),
       labelSmall: TextStyle(color: Colors.grey, fontSize: 16),
-      labelMedium: TextStyle(color: Colors.white, fontSize: 20),
-      labelLarge: TextStyle(color: Colors.black, fontSize: 18),
+      labelMedium: TextStyle(color: Colors.white, fontSize: 18),
+      labelLarge: TextStyle(color: Colors.black, fontSize: 16),
     ),
   );
 }

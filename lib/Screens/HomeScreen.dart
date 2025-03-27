@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:qcalc/Screens/Widgets/CalculatorButtons.dart';
-import 'package:qcalc/Screens/Widgets/CalculatorField.dart';
 import 'package:qcalc/Screens/Widgets/Dots.dart';
 import 'package:qcalc/Screens/MathEqulations.dart';
 
@@ -46,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               showModalBottomSheet(
                 context: context,
-                backgroundColor: Colors.deepOrange.shade400,
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 builder: (context) {
                   return SizedBox(
                     width: MediaQuery.of(context).size.width,

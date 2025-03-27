@@ -29,7 +29,7 @@ class Dots extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.05,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
-                  color: Theme.of(context).highlightColor,
+                  color: Theme.of(context).cardColor,
                 ),
                 child: Stack(
                   children: [
@@ -37,9 +37,27 @@ class Dots extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Switch(
-                          activeColor: Theme.of(context).focusColor,
+                          activeColor: Colors.yellow[700],
+                          activeTrackColor: Theme.of(context).dividerColor,
+                          trackOutlineColor:
+                              WidgetStateProperty.resolveWith<Color?>((
+                                Set<WidgetState> states,
+                              ) {
+                                return Theme.of(context).shadowColor;
+                              }),
                           value: state,
                           onChanged: (value) {
+                            showTopSnackBar(
+                              Overlay.of(context),
+                              CustomSnackBar.success(
+                                message: "Тема приложения сменена",
+                                textStyle: TextStyle(
+                                  color: Theme.of(context).indicatorColor,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            );
+                            Navigator.pop(context);
                             bloc.add(CalculatorLogicsTheme(value));
                           },
                         ),
@@ -50,11 +68,11 @@ class Dots extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         "Сменить тему",
-                        style: Theme.of(context).textTheme.labelLarge,
+                        style: Theme.of(context).textTheme.headlineLarge,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.only(right: 10),
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: AnimatedSwitcher(
@@ -72,7 +90,7 @@ class Dots extends StatelessWidget {
                           },
                           child: Icon(
                             key: ValueKey<bool>(state),
-                            state == true
+                            state != true
                                 ? HugeIcons.strokeRoundedMoon
                                 : Icons.wb_sunny_outlined,
                             size: 24,
@@ -137,7 +155,7 @@ class Dots extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.05,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
-                  color: Theme.of(context).highlightColor,
+                  color: Theme.of(context).cardColor,
                 ),
                 child: Stack(
                   children: [
@@ -145,7 +163,14 @@ class Dots extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Switch(
-                          activeColor: Theme.of(context).focusColor,
+                          activeColor: Theme.of(context).primaryColor,
+                          activeTrackColor: Theme.of(context).dividerColor,
+                          trackOutlineColor:
+                              WidgetStateProperty.resolveWith<Color?>((
+                                Set<WidgetState> states,
+                              ) {
+                                return Theme.of(context).shadowColor;
+                              }),
                           value: state,
                           onChanged: (value) {
                             blocLogic.add(CalculatorLogicsNotifications(value));
@@ -158,11 +183,11 @@ class Dots extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Text(
                         "Уведомления",
-                        style: Theme.of(context).textTheme.labelLarge,
+                        style: Theme.of(context).textTheme.headlineLarge,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.only(right: 10),
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: AnimatedSwitcher(
