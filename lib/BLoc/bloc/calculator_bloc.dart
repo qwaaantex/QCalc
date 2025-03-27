@@ -19,7 +19,9 @@ class CalculatorBloc extends Bloc<CalculatorEvent, String> {
     });
     on<CalculatorDelete>((event, emit) {
       if (state.length != 1) {
-      emit(state.substring(0, state.length - 1).toString());
+      final list = state.split("");
+      list[state.length - 1] = "";
+      emit(list.join());
       } else {
         emit("0");
       }
